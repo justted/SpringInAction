@@ -11,12 +11,11 @@ sourceCompatibility = 1.8
 
 jar {
     baseName = 'Chapter01'
+    baseName = 'stereo_autoconfig'
     version =  '0.0.1-SNAPSHOT'
-}
-
-jar{
 
 }
+
 
 repositories {
     mavenCentral()
@@ -37,8 +36,6 @@ dependencies {
     def log4jVersion = "1.2.17"
     def aspectJVersion = "1.8.10"
 
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     compile("org.springframework:spring-context:${springVersion}")
     compile("org.aspectj:aspectjweaver:${aspectJVersion}")
     compile("log4j:log4j:${log4jVersion}")
@@ -46,4 +43,7 @@ dependencies {
     testCompile("junit:junit:4.12")
     testCompile("org.mockito:mockito-core:2.3.7")
     testCompile("org.springframework:spring-test:${springVersion}")
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile ("com.github.stefanbirkner:system-rules:1.16.0")
 }
