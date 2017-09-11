@@ -11,7 +11,8 @@ sourceCompatibility = 1.8
 
 jar {
     baseName = 'Chapter01'
-    baseName = 'stereo_autoconfig'
+    baseName = 'stereo-javaconfig'
+    baseName = 'stereo-javaconfig'
     version =  '0.0.1-SNAPSHOT'
 
 }
