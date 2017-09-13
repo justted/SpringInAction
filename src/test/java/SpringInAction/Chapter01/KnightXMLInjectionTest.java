@@ -11,6 +11,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
+/*
+("classpath:SpringInAction/Chapter01/KnightXMLInjectionTest-context.xml")
+后面这一串可要可不要， 因为test的resource中已经有了默认的xml配置文件
+当然也可以用locations = {"classpath:SpringInAction/Chapter01/KnightXMLInjectionTest-context.xml"}
+如果有多个xml文件，可以locations = {"classpath*:···.xml", "classpath*:···.xml"}
+*/
 public class KnightXMLInjectionTest {
 
   @Autowired
