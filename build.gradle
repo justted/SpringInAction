@@ -13,6 +13,7 @@ jar {
     baseName = 'Chapter01'
     baseName = 'stereo-javaconfig'
     baseName = 'stereo-javaconfig'
+    baseName = 'stereo-xmlconfig'
     version =  '0.0.1-SNAPSHOT'
 
 }
