@@ -14,7 +14,7 @@ public class DataSourceConfig {
   
   @Bean(destroyMethod = "shutdown")
   @Profile("dev")
-  public DataSource embeddedDataSource() {
+  public DataSource embeddedDataSource() {   //像DataSource这种本来就在JDK包（或第三方包）中的类，自然用不了自动装配，只能用JavaConfig或者xml装配
     return new EmbeddedDatabaseBuilder()
         .setType(EmbeddedDatabaseType.H2)
         .addScript("classpath:SpringInAction/Chapter03/profiles/schema.sql")
