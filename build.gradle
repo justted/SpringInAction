@@ -38,10 +38,13 @@ dependencies {
     def springVersion = "4.0.6.RELEASE"
     def log4jVersion = "1.2.17"
     def aspectJVersion = "1.8.10"
+    def h2Version = "1.4.196"
 
     compile("org.springframework:spring-context:${springVersion}")
     compile("org.aspectj:aspectjweaver:${aspectJVersion}")
     compile("log4j:log4j:${log4jVersion}")
+    compile("org.springframework:spring-jdbc:${springVersion}")
+    compile("com.h2database:h2:${h2Version}")
 
     testCompile("junit:junit:4.12")
     testCompile("org.mockito:mockito-core:2.3.7")
