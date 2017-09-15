@@ -18,7 +18,7 @@ public class MagicExistsTest {
   private ApplicationContext context;
 
   @BeforeClass
-  public static void setProperties(){
+  public static void setProperties(){     //这里写private会出现错误，相当于设置的环境属性是私有的了
     System.setProperty("magic","MAGIC");
   }
   
