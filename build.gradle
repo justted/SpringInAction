@@ -22,7 +22,7 @@ jar {
 }
 
 
-repositories {
+repositories { 
     mavenCentral()
     mavenLocal()
     // maven库  
