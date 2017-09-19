@@ -14,7 +14,7 @@ public class ExplicitConfig {
     return new Notepad();
   }
   
-  @Bean
+  @Bean//这里默认的作用域是Singleton
   public UniqueThing unique() {
     return new UniqueThing();
   }
