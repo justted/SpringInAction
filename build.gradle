@@ -17,6 +17,7 @@ jar {
     baseName = 'stereo-mixedconfig'
     baseName = 'profiles'
     baseName = 'conditional'
+    baseName = 'scopedbeans'
     version =  '0.0.1-SNAPSHOT'
 
 }
