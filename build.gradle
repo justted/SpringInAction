@@ -18,6 +18,7 @@ jar {
     baseName = 'profiles'
     baseName = 'conditional'
     baseName = 'scopedbeans'
+    baseName = 'externals'
     version =  '0.0.1-SNAPSHOT'
 
 }
