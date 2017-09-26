@@ -10,6 +10,7 @@ public class BlankDisc implements CompactDisc {
     private String artist;
     private List<String> tracks;
 
+    //这里重载了构造器，保留了两种注入方式
     public BlankDisc() { }
 
     public BlankDisc(String artist, String title, List<String> tracks) {
