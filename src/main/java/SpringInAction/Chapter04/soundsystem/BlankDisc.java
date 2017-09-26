@@ -1,4 +1,4 @@
-package SpringInAction.Chapter04;
+package SpringInAction.Chapter04.soundsystem;
 
 import org.springframework.stereotype.Component;
 
