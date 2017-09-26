@@ -1,5 +1,8 @@
-package SpringInAction.Chapter04.concert;
+package SpringInAction.Chapter04.concert.Ordinary;
 
+import SpringInAction.Chapter04.concert.Ordinary.Audience;
+import SpringInAction.Chapter04.concert.Ordinary.ConcertConfig;
+import SpringInAction.Chapter04.concert.Ordinary.Performance;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
