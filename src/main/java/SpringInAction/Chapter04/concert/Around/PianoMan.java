@@ -1,4 +1,4 @@
-package SpringInAction.Chapter04.concert;
+package SpringInAction.Chapter04.concert.Around;
 
 import org.springframework.stereotype.Component;
 

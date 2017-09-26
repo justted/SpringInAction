@@ -1,10 +1,10 @@
-package SpringInAction.Chapter04.concert;
+package SpringInAction.Chapter04.concert.Ordinary;
 
 import org.aspectj.lang.annotation.*;
 
 @Aspect
 public class Audience {
-    @Pointcut("execution(* SpringInAction.Chapter04.concert.Performance.perform( .. ))")
+    @Pointcut("execution(* SpringInAction.Chapter04.concert.Ordinary.Performance.perform( .. ))")
     public void performance() {}
 
     @Before("performance()")

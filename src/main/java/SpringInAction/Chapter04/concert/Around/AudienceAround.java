@@ -1,11 +1,11 @@
-package SpringInAction.Chapter04.concert;
+package SpringInAction.Chapter04.concert.Around;
 
 import org.aspectj.lang.ProceedingJoinPoint;
-        import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.*;
 
 @Aspect
 public class AudienceAround {
-    @Pointcut("execution(* SpringInAction.Chapter04.concert.Performance.perform( .. ))")
+    @Pointcut("execution(* SpringInAction.Chapter04.concert.Around.Performance.perform( .. ))")
     public void performance() {}
 
     @Around("performance()")
