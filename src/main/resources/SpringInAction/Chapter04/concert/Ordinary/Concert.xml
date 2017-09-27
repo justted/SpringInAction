@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:config>
+        <aop:aspect ref="audience">
+            <aop:pointcut id="performance" expression="execution(* SpringInAction.Chapter04.concert.Ordinary.Performance.perform( .. ))"/>
+            <aop:before pointcut-ref="performance" method="silenceCellPhones"/>
+            <aop:before pointcut-ref="performance" method="takeSeats"/>
+            <aop:after-returning pointcut-ref="performance" method="applause"/>
+            <aop:after-throwing pointcut-ref="performance" method="demandRefund"/>
+        </aop:aspect>
+        <!--<aop:aspect>-->
+            <!--<aop:declare-parents types-matching="SpringInAction.Chapter04.concert.Ordinary.Performance+"-->
+                                 <!--implement-interface="SpringInAction.Chapter04.concert.Ordinary.Encoreable"-->
+                                 <!--default-impl="SpringInAction.Chapter04.concert.Ordinary.DefaultEncoreable"/>-->
+        <!--</aop:aspect>-->
+        <aop:aspect ref="encoreableIntroducer">
+            <aop:declare-parents types-matching="SpringInAction.Chapter04.concert.Ordinary.Performance+"
+                                 implement-interface="SpringInAction.Chapter04.concert.Ordinary.Encoreable"
+                                 delegate-ref="encoreableDelegate"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="audience" class="SpringInAction.Chapter04.concert.Ordinary.Audience"/>
+
+    <bean id="Performance" class="SpringInAction.Chapter04.concert.Ordinary.PianoMan"/>
+
+
+    <bean id="encoreableIntroducer" class="SpringInAction.Chapter04.concert.Ordinary.EncoreableIntroducer"/>
+    <!--不需要创建encoreableIntroducer的bean也是可以的，但是自动装配是需要创建它的bean。其实这里创建了还是好一些-->
+
+    <bean id="encoreableDelegate" class="SpringInAction.Chapter04.concert.Ordinary.DefaultEncoreable"/>
+</beans>

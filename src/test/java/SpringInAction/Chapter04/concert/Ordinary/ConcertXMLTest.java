@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ConcertConfig.class)
-public class ConcertTest {
+@ContextConfiguration(locations = {"classpath:SpringInAction/Chapter04/concert/Ordinary/Concert.xml"})
+public class ConcertXMLTest {
     @Rule
     public final SystemOutRule log = new SystemOutRule().enableLog();
 

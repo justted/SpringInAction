@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = ConcertAroungConfig.class)
+@ContextConfiguration(classes = ConcertAroundConfig.class)
 public class ConcertAroundTest {
     @Rule
     public final SystemOutRule log = new SystemOutRule().enableLog();
