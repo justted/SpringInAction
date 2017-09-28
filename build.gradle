@@ -10,15 +10,7 @@ apply plugin: 'idea'
 sourceCompatibility = 1.8
 
 jar {
-    baseName = 'Chapter01'
-    baseName = 'stereo-javaconfig'
-    baseName = 'stereo-javaconfig'
-    baseName = 'stereo-xmlconfig'
-    baseName = 'stereo-mixedconfig'
-    baseName = 'profiles'
-    baseName = 'conditional'
-    baseName = 'scopedbeans'
-    baseName = 'externals'
+    baseName = 'SpringInAction'
     version =  '0.0.1-SNAPSHOT'
 
 }
