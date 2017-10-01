@@ -6,7 +6,7 @@ apply plugin: 'java'
 apply plugin: 'war'// war包生产插件
 apply plugin: 'idea'
 
-//指定JDK版本
+// 指定JDK版本
 sourceCompatibility = 1.8
 
 jar {
