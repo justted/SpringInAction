@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://www.springframework.org/schema/beans 
       http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean id="knight" class="SpringInAction.Chapter01.BraveKnight">
+  <bean id="knight" class="knight.BraveKnight">
     <constructor-arg ref="quest" />
   </bean>
 
-  <bean id="quest" class="SpringInAction.Chapter01.SlayDragonQuest">
+  <bean id="quest" class="knight.SlayDragonQuest">
     <constructor-arg value="#{T(System).out}" />
   </bean>
 

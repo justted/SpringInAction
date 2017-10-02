@@ -1,4 +1,4 @@
-package SpringInAction.Chapter01;
+package knight;
 
 import static org.junit.Assert.*;
 

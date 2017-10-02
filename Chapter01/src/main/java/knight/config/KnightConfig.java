@@ -1,11 +1,12 @@
-package SpringInAction.Chapter01;
-
-import java.io.PrintStream;
+package knight.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
+import knight.BraveKnight;
+import knight.Knight;
+import knight.Quest;
+import knight.SlayDragonQuest;
 
 @Configuration
 public class KnightConfig {
@@ -14,15 +15,10 @@ public class KnightConfig {
   public Knight knight() {
     return new BraveKnight(quest());
   }
-
+  
   @Bean
   public Quest quest() {
-    return new SlayDragonQuest(stream());
-  }
-
-  @Bean
-  public PrintStream stream() {
-    return new FakePrintStream();
+    return new SlayDragonQuest(System.out);
   }
 
 }

@@ -1,4 +1,4 @@
-package SpringInAction.Chapter01;
+package knight;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

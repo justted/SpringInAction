@@ -1,4 +1,4 @@
-package SpringInAction.Chapter01.config;
+package knight.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 * 而且其他几个bean也没有使用@component注解
 * */
 @Configuration
-@ComponentScan(basePackages = "SpringInAction",
+@ComponentScan(basePackages = "knight",
                excludeFilters = { @Filter(Configuration.class) })
 public class SoundSystemConfig {
 }

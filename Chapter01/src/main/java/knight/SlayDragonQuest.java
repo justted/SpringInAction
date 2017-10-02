@@ -1,9 +1,8 @@
-package SpringInAction.Chapter01;
-
+package knight;
 
 import java.io.PrintStream;
 
-public class SlayDragonQuest implements Quest {
+public class SlayDragonQuest implements knight.Quest {
 
   private PrintStream stream;
 

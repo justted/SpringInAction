@@ -1,0 +1,53 @@
+group 'com.SpringInAction'
+version '1.0-SNAPSHOT'
+
+// 应用Gradle各插件
+apply plugin: 'java'
+apply plugin: 'war'// war包生产插件
+apply plugin: 'idea'
+
+// 指定JDK版本
+sourceCompatibility = 1.8
+
+jar {
+    baseName = 'SpringInAction'
+    version =  '0.0.1-SNAPSHOT'
+
+}
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    // maven库  
+    def cn = "http://maven.oschina.net/content/groups/public/"
+    def abroad = "http://central.maven.org/maven2/"
+    def REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public/'
+    // 先从url中下载jar若没有找到，则在artifactUrls中寻找  
+    maven {
+        url REPOSITORY_URL
+        artifactUrls abroad
+        cn
+    }
+}
+
+dependencies{
+    def springVersion = "4.0.6.RELEASE"
+    def log4jVersion = "1.2.17"
+    def aspectJVersion = "1.8.10"
+    def mockitoVersion = "2.3.7"
+    def junitVersion = "4.11"
+
+
+    compile("org.springframework:spring-context:${springVersion}")
+    compile("org.aspectj:aspectjweaver:${aspectJVersion}")
+    compile("log4j:log4j:${log4jVersion}")
+
+    testCompile("junit:junit:${junitVersion}")
+    testCompile("org.mockito:mockito-core:${mockitoVersion}")
+    testCompile("org.springframework:spring-test:${springVersion}")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
