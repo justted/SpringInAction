@@ -10,8 +10,8 @@ public class Spittle {
   private final Long id;
   private final String message;
   private final Date time;
-  private Double latitude;
-  private Double longitude;
+  private Double latitude;//纬度
+  private Double longitude;//经度
 
   public Spittle(String message, Date time) {
     this(null, message, time, null, null);
