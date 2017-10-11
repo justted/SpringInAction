@@ -31,11 +31,12 @@
           </li>
         </c:forEach>
       </ul>
-      <c:if test="${fn:length(spittleList) gt 20}">
-        <hr />
+      <c:if test="${fn:length(spittleList) gt 20}"> <%--fn:length(...)返回字符串长度或集合中元素的数量--%>
+        <hr/>
         <s:url value="/spittles?count=${nextCount}" var="more_url" />
         <a href="${more_url}">Show more</a>
       </c:if>
+      <%--c:if这里无论如何也不起作用，实在是很令人焦心。。。无奈，放弃啦--%>
     </div>
   </body>
 </html>
