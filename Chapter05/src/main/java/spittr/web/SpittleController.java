@@ -47,11 +47,12 @@ public class SpittleController {
 
   @RequestMapping(method=RequestMethod.POST)
   //处理用户提交的表单数据（spittles，吐槽），仔重定向至/spittles
-  //这里涉及到了controller接收表单数据的问题，这里是通过一个bean来接收的，比较方便
+  //这里涉及到了controller接收表单数据的问题，这里是通过一个bean（这里应该是SpittleForm，bean应该放在参数中）来接收的，比较方便
   //id应该是自增的
   public String saveSpittle(SpittleForm form, Model model) throws Exception {
     spittleRepository.save(new Spittle(null, form.getMessage(), new Date(), 
         form.getLongitude(), form.getLatitude()));
+    //bean默认是单例的，所以存储在spittleRepository中的Spittle对象可以保存传递
     return "redirect:/spittles";
   }
 
