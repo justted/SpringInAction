@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.springinaction.pizza.service.PricingEngine;
 import org.springframework.beans.factory.annotation.Configurable;
 
 @Configurable("order")
@@ -12,6 +13,7 @@ public class Order implements Serializable {
    private Customer customer;
    private List<Pizza> pizzas;
    private Payment payment;
+   private PricingEngine pricingEngine;
 
    public Order() {
       pizzas = new ArrayList<Pizza>();
