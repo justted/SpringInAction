@@ -15,6 +15,14 @@ public class Order implements Serializable {
    private Payment payment;
    private PricingEngine pricingEngine;
 
+   public PricingEngine getPricingEngine() {
+      return pricingEngine;
+   }
+
+   public void setPricingEngine(PricingEngine pricingEngine) {
+      this.pricingEngine = pricingEngine;
+   }
+
    public Order() {
       pizzas = new ArrayList<Pizza>();
       customer = new Customer();
