@@ -23,6 +23,6 @@
 
   <bean id="transactionManager"
         class="org.springframework.jdbc.datasource.DataSourceTransactionManager" 
-        c:_0-ref="dataSource" />
+        c:_0-ref="dataSource"/>
  
 </beans>
