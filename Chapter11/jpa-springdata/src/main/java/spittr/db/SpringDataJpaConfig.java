@@ -1,4 +1,6 @@
 package spittr.db;
+import javax.inject.Inject;
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
@@ -11,6 +13,8 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableJpaRepositories("spittr.db")
@@ -24,10 +28,20 @@ public class SpringDataJpaConfig {
         .addScript("classpath:/spittr/db/jpa/test-data.sql")
         .build();
   }
-  
-  @Bean
-  public JpaTransactionManager transactionManager() {
-    return new JpaTransactionManager(); // does this need an emf???
+
+  @Configuration
+  @EnableTransactionManagement
+  public static class TransactionConfig {
+
+    @Inject
+    private EntityManagerFactory emf;
+
+    @Bean
+    public PlatformTransactionManager transactionManager() {
+      JpaTransactionManager transactionManager = new JpaTransactionManager();
+      transactionManager.setEntityManagerFactory(emf);
+      return transactionManager;
+    }
   }
 
   @Bean
@@ -48,15 +62,6 @@ public class SpringDataJpaConfig {
     adapter.setGenerateDdl(false);
     adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
     return adapter;
-  }
-  
-  @Bean
-  public Object emf() {
-    LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
-    emf.setDataSource(dataSource());
-    emf.setPersistenceUnitName("spitter");
-    emf.setJpaVendorAdapter(jpaVendorAdapter());
-    return emf;
   }
   
 }
