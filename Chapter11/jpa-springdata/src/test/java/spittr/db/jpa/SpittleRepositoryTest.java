@@ -13,12 +13,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import spittr.db.SpittleRepository;
-import spittr.db.SpringDataJpaConfig;
 import spittr.domain.Spitter;
 import spittr.domain.Spittle;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=SpringDataJpaConfig.class)
+@ContextConfiguration(classes=JpaConfig.class)
 public class SpittleRepositoryTest {
 	
 	@Autowired
